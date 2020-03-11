@@ -1,0 +1,233 @@
+    html{
+        overflow: hidden;
+    }
+
+    @font-face {
+    	font-family:"NeoSansProRegular";src:url("font/NeoSansPro-Regular.ttf") format("truetype");
+    	font-family:"NeoSansProMedium";src:url("font/NeoSansPro-Medium.ttf") format("truetype");
+    	font-family:"NeoSansProLight";src:url("font/NeoSansPro-Light.ttf") format("truetype")
+    }
+
+    p{
+        font-weight: lighter;
+        font-size: 2.5vh;
+        font-style: italic;
+    }
+
+    body {
+        background-color: #ffffff;
+        font-family: 'NeoSansProRegular', sans-serif;
+        padding-left: 10%;
+        padding-right: 10%;
+        background-position: center center;
+        background-attachment: fixed;
+        position: absolute;
+        background: url("bg-image/subuh.jpg") no-repeat; /* CHANGE IMAGE BACKGROUND IN HERE COMPATIBLE TIME PRAYER */
+        background-size: cover !important;
+        -webkit-background-size: cover !important;
+        -moz-background-size: cover !impoertant;
+        -webkit-font-smoothing: antialiased;
+        -moz-font-smoothing: antialiased; 
+        overflow: hidden;
+    }
+
+
+    .prayer_time{
+        position: fixed;
+        font-family: 'NeoSansProRegular', sans-serif;
+        left:0%;
+        bottom: 0%;
+        padding-top: 1%;
+        width: 100%;
+        height: 50%;
+        z-index: 999;
+        background-color: #ffffff;
+        border-radius: 4vh 4vh 0vh 0vh; 
+        overflow: hidden;
+        animation-duration: 2s;
+        animation-fill-mode: both;
+        animation-timing-function: cubic-bezier(.4,0,.2,1);
+        font-size: 2.5vh;
+        padding-bottom: 2vh;
+    }
+
+    .row{
+        display: flex;
+        align-items: center;
+        padding-top: 5vh;
+        padding-bottom: 0vh;
+    }
+
+    .column{
+        flex-basis: 100%;
+        padding-left: 5vh;
+        font-size: 2.5vh;
+    }
+
+    .icon{
+        flex: 20%;
+    }
+
+    .tittle{
+        flex: 50%;
+    }
+
+    .time{
+        flex: 30%;
+    }
+
+
+    /* CURRENT ACTIVE BOLD PRAYER TIME */
+    .active {
+        font-weight: bold;
+    }
+    /* CURRENT ACTIVE BOLD PRAYER TIME */
+
+
+    .date {
+        font-weight: bold;
+        position: fixed;
+        background: transparent;
+        left:0%;
+        bottom: 0%;
+        width: 100%;
+        height: 62%;
+        z-index: 999;
+        border-radius: 2vh 2vh 0vh 0vh; 
+        overflow: hidden;
+        animation-duration: .9s;
+        animation-fill-mode: both;
+        animation-timing-function: cubic-bezier(.4,0,.2,1);
+        animation-name: date;
+        text-align: center;
+        font-size: 2.7vh;
+        z-index: 0;
+        color: #ffffff;
+        overflow: hidden;
+        top: 37%;
+     }
+
+    .text{  
+        margin-top:1vh;
+        padding-top: 2%
+        color: #ffffff;
+        line-height: 50%;
+        animation-duration: 2s;
+        animation-fill-mode: both;
+        animation-timing-function: cubic-bezier(.4,0,.2,1);
+    }
+
+    .tittle-prayer{
+    	font-family:'NeoSansProLight', sans-serif;
+        text-transform: uppercase;
+        position: fixed;
+        left:0%;
+        width: 100%;
+        z-index: 999;
+        text-align: center;
+        font-size: 8vh;
+        top: 15%;
+        color: white;
+        text-shadow: 0px 0px 100px rgba(150, 150, 150, 1);
+        letter-spacing: 1.5vh;
+        font-weight: lighter;
+        animation-duration: 2s;
+        animation-fill-mode: both;
+        animation-timing-function: cubic-bezier(.4,0,.2,1);
+    }
+
+    .icon-prayer{
+        position: fixed;
+        left:0%;
+        width: 100%;
+        z-index: 999;
+        text-align: center;
+        font-size: 2vh;
+        top: 5.2%;
+        color: white;
+        text-shadow: 0px 0px 100px rgba(150, 150, 150, 1);
+        letter-spacing: 1.5vh;
+        animation-duration: 2s;
+        animation-fill-mode: both;
+        animation-timing-function: cubic-bezier(.4,0,.2,1);
+    }
+
+    .location{
+        position: fixed;
+        left:0%;
+        width: 100%;
+        z-index: 999;
+        line-height: 0vh;
+    		text-align: center;
+        font-size: 3.2vh;
+        top: 25%;
+        color: white;
+        text-shadow: 0px 0px 100px rgba(150, 150, 150, 1);
+        font-weight: bold;
+        animation-duration: 2s;
+        animation-fill-mode: both;
+        animation-timing-function: cubic-bezier(.4,0,.2,1);
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -moz-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -moz-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+
+
+
+
+    @keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translate3d(0,75%,0);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+        }
+    }
+
+
+    @keyframes zoomIn {
+      from {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .zoomIn {
+      animation-name: zoomIn;
+    }
+
+
+    .fadeIn {
+      animation-name: fadeIn;
+    }
+
+
