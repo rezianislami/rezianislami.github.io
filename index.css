@@ -22,7 +22,7 @@
         background-position: center center;
         background-attachment: fixed;
         position: absolute;
-        background: url("bg-image/subuh.jpg") no-repeat; /* CHANGE IMAGE BACKGROUND IN HERE COMPATIBLE TIME PRAYER */
+        background: url("bg-image/ashar.jpg") no-repeat; /* CHANGE IMAGE BACKGROUND IN HERE COMPATIBLE TIME PRAYER */
         background-size: cover !important;
         -webkit-background-size: cover !important;
         -moz-background-size: cover !impoertant;
