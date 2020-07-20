@@ -1,0 +1,308 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Asal Otak</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"> </script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+</head>
+<style>
+    p {
+        padding-left: 1rem;
+    }
+    
+    div.pure-g-r {
+        width: 100%;
+        margin-left: 0em;
+        margin-right: 0em;
+    }
+    
+    div.centered {
+        margin-top: 5%;
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    body {
+        background-color: #1BA6DF;
+        font-family: 'Roboto', sans-serif;
+        color: #ffffff;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    
+    div.centered img {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    div.question {
+        margin-top: 1em;
+        text-align: center;
+        font-size: 3.8vw;
+        font-weight: bold;
+    }
+    
+    a.pure-button-primary {
+        background-color: #d13d7c;
+    }
+    
+    h3 {
+        text-align: center;
+        color: #f2d592;
+    }
+    
+    img.mulai-btn {
+        width: 110%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    div.white-pill {
+        margin-top: 1em;
+        line-height: 6vw;
+        background-color: white;
+        color: #1BA6DF;
+        font-size: 4vw;
+        text-align: center;
+        border-radius: 10px;
+    }
+    
+    span.highlight {
+        color: #fcc3e6;
+    }
+    
+    ol {
+        list-style: none;
+        counter-reset: li
+    }
+    
+    li::before {
+        content: counter(li) ". ";
+        color: #fcc3e6;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em
+    }
+    
+    li {
+        counter-increment: li
+    }
+    
+    div.letter {
+        text-align: center;
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+    
+    span.letter-middle {
+        text-align: center;
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+    
+    .letter img {
+        width: 8vw;
+    }
+    
+    .letter-middle img {
+        margin-top: 3.5px;
+        width: 8vw;
+    }
+    
+    div.compact {
+        text-align: center;
+        margin-left: -0.1vw;
+        margin-right: -1vw;
+    }
+    
+    div.clue {
+        margin-top: 1em;
+        background-color: #10758E;
+        line-height: 1.5em;
+        font-size: 3vh;
+        border-radius: 4px;
+        vertical-align: middle;
+        margin-bottom: 1em;
+    }
+    
+    div.clue-question {
+        margin-top: 1em;
+        background-color: white;
+        color: #ED2124;
+        line-height: 1.5em;
+        font-size: 2vh;
+        border-radius: 4px;
+        vertical-align: middle;
+        margin-bottom: 1em;
+        padding: 0px;
+    }
+    
+    div.clue-text {
+        font-size: 4vw;
+        padding-top: 5px;
+        padding-left: 5px;
+    }
+    
+    div.hint {
+        font-weight: bold;
+        font-size: 1.5vh;
+    }
+    
+    div.nebak {
+        font-size: 2vh;
+    }
+    
+    div.loading-white {
+        margin-top: 0.5em;
+        background-color: white;
+        border-radius: 10px;
+        color: #10758E;
+        font-size: 1.8vh;
+        line-height: 3vh;
+    }
+    
+    div.yellow {
+        position: absolute;
+    }
+    
+    div.loading-yellow {
+        position: relative;
+        margin-top: 0.5em;
+        background-color: #FFD34D;
+        border-radius: 10px;
+        color: #10758E;
+        font-size: 1.8vh;
+        line-height: 3vh;
+    }
+</style>
+
+<body>
+    <!--
+    Your HTML goes here. Visit purecss.io/layouts/ for some sample HTML code.
+    -->
+    <div class="pure-g-r header">
+        <div class="pure-u-3-3">
+            <div class="centered">
+                <img src="header-logo.png" />
+            </div>
+        </div>
+
+        <div class="pure-g-r">
+            <div class="pure-u-9-12">
+                <div class="centered">
+                    <div class="white-pill">
+                        Tebak kode promo berhadiah 3 voucher
+                    </div>
+                </div>
+            </div>
+            <div class="pure-g-r">
+                <div class="pure-u-12-12">
+                    <div class="centered">
+                        <div class="question">
+                            Selalu beduaan, namun gak saling kenal?
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pure-g-r centered" style="margin-left: -1vw" data-bind="foreach: days[day]">
+                <div class="pure-u-1-8 compact">
+                    <div class="letter">
+                        <img data-bind="attr: { src: $data }" />
+                    </div>
+                </div>
+            </div>
+            <div class="pure-g-r" style="border-top: 1px solid #10758E; margin-top: 1vh;">
+                <div class="pure-u-3-3">
+                </div>
+            </div>
+            <div class="pure-g-r clue">
+                <div class="pure-u-7-12 clue-text">
+                    Petunjuk hari ini huruf:
+                </div>
+                <div class="pure-u-1-12">
+                    <span class="letter-middle"><img data-bind="attr:{ src: lettersReveal[day] }" /></span>
+                </div>
+                <div class="pure-u-1-12">
+                    <span class="letter-middle"></span>
+                </div>
+                <div class="pure-u-1-12">
+                    <span class="letter-middle"></span>
+                </div>
+                <div class="pure-u-1-12" style="margin-left: -0.5em;">
+                    <span class="letter-middle"><img src="unlock.png"/></span>
+                </div>
+            </div>
+
+            <div class="pure-g-r clue-question">
+                <div class="pure-u-1-6">
+                    <div style="padding-top:15%;padding-left:15%"><img style="height: 6vh;" src="quest.png" /></div>
+                </div>
+                <div class="pure-u-3-4">
+                    <div class="sub-header">Ga ketebak?</div>
+                    <div class="hint">Buka aplikasi GO-JEK besok untuk dapat petunjuk baru setiap hari.</div>
+                </div>
+            </div>
+
+            <div class="pure-g-r">
+                <div class="pure-u-3-3 nebak">Yang berhasil nebak dan dapat voucher:</div>
+            </div>
+
+            <div style="position: relative">
+                <div class="pure-g-r" style="position:absolute">
+                    <div class=" loading-white"><span style="margin-left: 5px; width: 100%"></span></div>
+                </div>
+                <div class="pure-g-r yellow" data-bind="style : { width: progress[day] }">
+                    <div class="loading-yellow"><span style="margin-left: 5px;" data-bind="text: progress[day]">10%</span></div>
+                </div>
+            </div>
+
+            <div class="pure-g-r" style="margin-top: 2em">
+                <div class="pure-u-3-3">
+                    <div class="centered">
+                        <a id="promo-link" href="gojek://growth/promo?code="><img class="mulai-btn" src="button.png"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="pure-g-r">
+                <div class="pure-u-3-3">
+                    <div class="centered"><img src="https://spacergif.org/spacer.gif" width="1" height="1em" /></div>
+                </div>
+            </div>
+</body>
+<script type="text/javascript">
+    launchDate = new Date(2018, 24, 12)
+    currentDate = new Date(2018, 29, 12)
+
+    day = Math.abs(currentDate.getDate() - launchDate.getDate())
+    console.log(day)
+    
+    lettersReveal = ["3-A-yellow.png", "7-U-yellow.png", "4-P-yellow.png", "1-S-yellow.png", "8-H-yellow.png"]
+
+    days = [
+            ["blank/blank-1.png", "blank/blank-2.png", "3-A-yellow.png", "blank/blank-4.png", 
+            "blank/blank-5.png", "blank/blank-6.png", "blank/blank-7.png", "blank/blank-8.png"],
+            ["blank/blank-1.png", "blank/blank-2.png", "3-A-white.png", "blank/blank-4.png", 
+            "blank/blank-5.png", "blank/blank-6.png", "7-U-yellow.png", "blank/blank-8.png"],
+            ["blank/blank-1.png", "blank/blank-2.png", "3-A-white.png", "4-P-yellow.png", 
+            "blank/blank-5.png", "blank/blank-6.png",  "7-U-white.png", "blank/blank-8.png"],
+            ["1-S-yellow.png", "blank/blank-2.png", "3-A-white.png", "4-P-white.png", 
+            "blank/blank-5.png","blank/blank-6.png",  "7-U-white.png", "blank/blank-8.png"],
+            ["1-S-white.png", "blank/blank-2.png", "3-A-white.png", "4-P-white.png", 
+            "blank/blank-5.png", "blank/blank-6.png",  "7-U-white.png", "8-H-yellow.png"],
+    ]
+
+    progress = ["13%", "37%", "56%", "85%", "97%"]
+
+    ko.applyBindings({ days : days, day : day, lettersReveal: lettersReveal, progress: progress })
+</script>
+</html>
