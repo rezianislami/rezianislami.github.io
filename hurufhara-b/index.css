@@ -1,0 +1,178 @@
+p {
+	font-size: 8pt
+}
+div.pure-g-r {
+	width: 100%;
+	margin-left: 0em;
+	margin-right: 0em
+}
+div.centered {
+	margin-top: 5%;
+	width: auto;
+	margin-left: auto;
+	margin-right: auto
+}
+h1 {
+	font-family: 'Roboto', sans-serif
+}
+body {
+	font-family: 'Roboto', sans-serif;
+	padding-left: 5%;
+	padding-right: 5%
+}
+div.header-text {
+	font-size: 16pt
+}
+div.centered img {
+	display: block;
+	width: 100%;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto
+}
+div.question {
+	margin-top: 1em;
+	text-align: left;
+	font-size: 3.8vw;
+}
+a.pure-button-primary {
+	background-color: #d13d7c
+}
+h3 {
+	text-align: center;
+	color: #f2d592
+}
+img.mulai-btn {
+	width: 110%;
+	margin-left: auto;
+	margin-right: auto
+}
+div.white-pill {
+	margin-top: 1em;
+	line-height: 6vw;
+	background-color: white;
+	color: #1BA6DF;
+	font-size: 4vw;
+	text-align: center;
+	border-radius: 10px
+}
+span.highlight {
+	color: #fcc3e6
+}
+ol {
+	list-style: none;
+	counter-reset: li
+}
+li::before {
+	content: counter(li)". ";
+	color: #fcc3e6;
+	display: inline-block;
+	width: 1em;
+	margin-left: -1em
+}
+li {
+	counter-increment: li
+}
+div.letter {
+	text-align: center;
+	margin-left: 2px;
+	margin-right: 2px;
+	font-size: 6vw
+}
+span.letter-middle {
+	text-align: center;
+	margin-left: 2px;
+	margin-right: 2px
+}
+.letter span {
+	width: 2vw
+}
+.letter-middle img {
+	margin-top: 3.5px;
+	width: 8vw
+}
+div.compact {
+	text-align: center;
+	margin-left: -.1vw;
+	margin-right: -1vw
+}
+div.clue {
+	margin-top: 1em;
+	background-color: #10758E;
+	line-height: 1.5em;
+	font-size: 3vh;
+	border-radius: 4px;
+	vertical-align: middle;
+	margin-bottom: 1em
+}
+div.clue-question {
+	margin-top: 1em;
+	background-color: white;
+	color: #ED2124;
+	line-height: 1.5em;
+	font-size: 2vh;
+	border-radius: 4px;
+	vertical-align: middle;
+	margin-bottom: 1em;
+	padding: 0
+}
+div.clue-text {
+	font-size: 4vw;
+	padding-top: 5px;
+	padding-left: 5px
+}
+div.hint {
+	font-weight: 700;
+	font-size: 1.5vh
+}
+div.loading-white {
+	margin-top: .5em;
+	background-color: #ededee;
+	border-radius: 10px;
+	color: #10758E;
+	font-size: 1.8vh;
+	line-height: 3vh
+}
+div.yellow {
+	position: absolute
+}
+div.loading {
+	position: relative;
+	margin-top: .5em;
+	background-color: #6b6b6b;
+	border-radius: 10px;
+	color: white;
+	font-size: 1.8vh;
+	line-height: 3vh
+}
+div.load-yellow {
+	background-color: #fdb913
+}
+div.load-red {
+	background-color: #ed1f24
+}
+img.header-img {
+	max-width: 50%
+}
+div.heading-5 {
+	margin-top: 5vh;
+	font-size: 9pt;
+	font-weight: 700
+}
+div.nebak {
+	font-size: 7pt
+}
+div.udahpunya {
+	font-size: 7pt;
+	text-align: center;
+	font-weight: 700
+}
+div.flavor-text {
+	font-size: 7pt
+}
+div.text-grey {
+	color: #6b6b6b
+}
+div.text-red {
+	color: #ed1f24
+}

@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Asal Otak</title>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+      <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+      <link rel="stylesheet" href="index.css">
+   </head>
+   <style>@font-face{font-family:"NeoSans";src:url("NeoSansPro-Medium 2.ttf") format("truetype")}div.headerfont{font-family:'NeoSans',Roboto,sans-serif}</style>
+   <body>
+      <div class="pure-g-r header">
+      <div class="pure-u-3-3">
+         <div> <img class="header-img" src="icon-asalotak.png" style="margin-left: -1em;"/></div>
+      </div>
+      <div class="pure-g-r">
+      <div class="pure-u-9-12">
+         <div class="header-text headerfont"> Petunjuk kode promo:</div>
+      </div>
+      <div class="pure-g-r">
+         <div class="pure-u-12-12">
+            <div class="centered">
+               <div class="question"> "Gelap-gelap bikin sakit. Apa hayo?"</div>
+            </div>
+         </div>
+      </div>
+      <div class="pure-g-r centered" style="margin-left: -1vw" >
+        <div class="pure-u-16-24" data-bind="foreach: days[day]">
+            <div class="pure-u-2-24 compact">
+                <div class="letter headerfont"> <span data-bind="text: $data " /></div>
+            </div>
+        </div>
+        <div class="pure-u-6-24  flavor-text text-grey" style="vertical-align: middle">(8 karakter)</div>
+      </div>
+      <div class="pure-g-r" style="border-top: 1px solid black; margin-top: 1vh;">
+         <div class="pure-u-3-3"></div>
+      </div>
+      <div class="pure-g-r " style="margin-top: 20%">
+         <div class="heading-5 headerfont">Kamu tau jawabannya, gak?</div>
+         <p>Kalo gak tau, jangan mewek. Ada bocoran harian di app GOJEK. Tapi, jangan lama mikirnya, biar kebagian hadiahnya!</p>
+      </div>
+      <div class="pure-g-r" style="margin-top:5vh">
+         <div class="pure-u-3-3 nebak">Total voucher yang udah diembat:</div>
+      </div>
+      <div style="position: relative">
+         <div class="pure-g-r" style="position:absolute">
+            <div class="loading-white"><span style="margin-left: 5px; width: 100%"></span></div>
+         </div>
+         <div class="pure-g-r yellow" data-bind="style : { width: progress[day] }">
+            <div data-bind="css: cssBar[day]"><span style="margin-left: 5px;" data-bind="text: progress[day]">10%</span></div>
+         </div>
+      </div>
+      <div class="pure-g-r" style="margin-top: 5vh">
+         <div class="pure-u-3-3 flavor-text text-grey" data-bind="text: progressText[day]"></div>
+      </div>
+      <div class="pure-g-r" style="margin-top: 5em">
+         <div class="pure-u-3-3 udahpunya headerfont">UDAH PUNYA JAWABAN KODE PROMONYA?</div>
+      </div>
+      <div class="pure-g-r">
+         <div class="pure-u-3-3">
+            <div class="centered"> <a id="promo-link" href="gojek://growth/promo?code="><img class="mulai-btn" src="button-masukkan-sekarang.png"></a></div>
+         </div>
+      </div>
+      <div class="pure-g-r">
+         <div class="pure-u-3-3">
+            <div class="centered"><img src="https://spacergif.org/spacer.gif" width="1" height="1em" /></div>
+         </div>
+      </div>
+   </body>
+   <script type="text/javascript" src="index.js"></script> 
+</html>
+
+
